@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const linksData = [
-  { to: '/', text: 'UNTERNEHMEN' },
+  { to: '/unternehmen', text: 'UNTERNEHMEN' },
   { to: '/', text: 'LEISTUNGSPORTFOLIO' },
   { to: '/', text: 'IT-HELPDESK' },
   { to: '/', text: 'KONTAKT' },
@@ -29,7 +29,7 @@ const Header = ({ logoImg }) => {
 const MyLink = ({ children, to }) => {
   return (
     <Link
-      className="pt-2 din uppercase no-underline hover:underline px-4 text-grey  text-lg"
+      className="pt-2 tracking-wide din uppercase no-underline hover:underline px-4 text-grey  text-lg"
       to={to}
     >
       {children}

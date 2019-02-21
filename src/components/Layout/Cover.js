@@ -18,7 +18,7 @@ const Cover = ({ coverImg, logoWhiteImg }) => {
         </div>
         <div
           className="futura font-bold text-white"
-          style={{ fontSize: '109px' }}
+          style={{ fontSize: '89px' }}
         >
           Cliente Semper Fi
         </div>

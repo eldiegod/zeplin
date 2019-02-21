@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `title`,
+    title: `Trident Computer`,
     author: `Diego Cardenas`,
     description: `desc`,
     siteUrl: `www.google.com`,

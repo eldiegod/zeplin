@@ -9,8 +9,8 @@ export default function BlogIndex({ data: { site }, location }) {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title="All posts"
-        keywords={[`yoga`, `madrid`, `meditacion`, `alitasyoga`]}
+        title="Unternehmen"
+        keywords={[`unternehmen`, `Über uns`, `Ansprechpartner`, `Geschichte`]}
       />
       this is a pepe
     </Layout>
