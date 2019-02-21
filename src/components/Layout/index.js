@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './Header'
 import Footer from './Footer'
+import Cover from './Cover'
 
 const Layout = ({ location, children }) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ location, children }) => {
         return (
           <div>
             <Header logoImg={data.logo} />
+            <Cover coverImg={data.cover} logoWhiteImg={data.logoWhite} />
             {children}
             <Footer />
           </div>
@@ -35,6 +37,20 @@ export const layoutQuery = graphql`
       childImageSharp {
         fixed(width: 234, height: 30) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    logoWhite: file(absolutePath: { regex: "/logo-white.png/" }) {
+      childImageSharp {
+        fixed(width: 300, height: 38) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    cover: file(absolutePath: { regex: "/cover.jpg/" }) {
+      childImageSharp {
+        fluid(maxHeight: 608) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
