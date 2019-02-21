@@ -15,9 +15,11 @@ const Header = ({ logoImg }) => {
       <div className="flex-none">
         <Img fixed={logoImg.childImageSharp.fixed} />
       </div>
-      <div className="flex flex-grow justify-end">
-        {linksData.map(l => (
-          <MyLink to={l.to}>{l.text}</MyLink>
+      <div className="flex flex-grow justify-end content-center">
+        {linksData.map((l, index) => (
+          <MyLink key={index} to={l.to}>
+            {l.text}
+          </MyLink>
         ))}
       </div>
     </div>
@@ -27,7 +29,7 @@ const Header = ({ logoImg }) => {
 const MyLink = ({ children, to }) => {
   return (
     <Link
-      className="uppercase no-underline hover:underline px-4 text-grey font-lg"
+      className="pt-2 din uppercase no-underline hover:underline px-4 text-grey  text-lg"
       to={to}
     >
       {children}

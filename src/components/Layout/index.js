@@ -36,14 +36,14 @@ export const layoutQuery = graphql`
     logo: file(absolutePath: { regex: "/logo.png/" }) {
       childImageSharp {
         fixed(width: 234, height: 30) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }
     logoWhite: file(absolutePath: { regex: "/logo-white.png/" }) {
       childImageSharp {
         fixed(width: 300, height: 38) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }

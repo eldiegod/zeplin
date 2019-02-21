@@ -26,7 +26,6 @@
   font-weight: bold;
   src: local('DIN Condensed Bold'), url('/DIN_Condensed_Bold.ttf') format('ttf');
 }
-.din-bold {
-  font-weight: bold;
+.din {
   font-family: 'Din Condensed';
 }
