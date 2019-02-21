@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b33922b3-e603-42be-a67d-a50db4b9be23/deploy-status)](https://app.netlify.com/sites/elegant-raman-72d781/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
