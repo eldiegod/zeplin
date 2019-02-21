@@ -4,10 +4,9 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
-export default function BlogIndex({ data: { site }, location }) {
-  const siteTitle = site.siteMetadata.title
+export default function BlogIndex({ data }) {
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <SEO
         title="Unternehmen"
         keywords={[`unternehmen`, `Über uns`, `Ansprechpartner`, `Geschichte`]}

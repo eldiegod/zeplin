@@ -9,7 +9,7 @@ export default function BlogIndex({ data }) {
   const { guy1, guy2, guy3 } = data
   console.dir(data)
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO
         title="Unternehmen"
         keywords={[`unternehmen`, `Über uns`, `Ansprechpartner`, `Geschichte`]}
