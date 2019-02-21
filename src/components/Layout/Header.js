@@ -13,7 +13,9 @@ const Header = ({ logoImg }) => {
   return (
     <div className="px-8 w-full flex items-center h-20 bg-white">
       <div className="flex-none">
-        <Img fixed={logoImg.childImageSharp.fixed} />
+        <Link to="/">
+          <Img fixed={logoImg.childImageSharp.fixed} />
+        </Link>
       </div>
       <div className="flex flex-grow justify-end content-center">
         {linksData.map((l, index) => (
