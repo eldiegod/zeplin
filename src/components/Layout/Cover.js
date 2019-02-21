@@ -16,7 +16,7 @@ const Cover = ({ coverImg, logoWhiteImg }) => {
         <div className="flex-none">
           <Img fixed={logoWhiteImg.childImageSharp.fixed} />
         </div>
-        <div className="futura-bold text-white" style={{ fontSize: '109px' }}>
+        <div className="din-bold text-white" style={{ fontSize: '109px' }}>
           Cliente Semper Fi
         </div>
       </BgImage>

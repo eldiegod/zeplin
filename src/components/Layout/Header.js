@@ -3,11 +3,11 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const linksData = [
-  { to: '', text: 'UNTERNEHMEN' },
-  { to: '', text: 'LEISTUNGSPORTFOLIO' },
-  { to: '', text: 'IT-HELPDESK' },
-  { to: '', text: 'KONTAKT' },
-  { to: '', text: 'KARRIERE' },
+  { to: '/', text: 'UNTERNEHMEN' },
+  { to: '/', text: 'LEISTUNGSPORTFOLIO' },
+  { to: '/', text: 'IT-HELPDESK' },
+  { to: '/', text: 'KONTAKT' },
+  { to: '/', text: 'KARRIERE' },
 ]
 const Header = ({ logoImg }) => {
   return (

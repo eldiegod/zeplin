@@ -12,7 +12,7 @@ export default function BlogIndex({ location }) {
         title="All posts"
         keywords={[`yoga`, `madrid`, `meditacion`, `alitasyoga`]}
       />
-      <div className="bg-teal-darkest">this is a page</div>
+      <div className="bg-teal-darkest">this is a page22</div>
     </Layout>
   )
 }

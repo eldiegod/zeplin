@@ -57,6 +57,14 @@ module.exports = {
         // icon: `content/assets/gatsby-icon.png`,
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     google: {
+    //       families: ['Droid Sans', 'Droid Serif']
+    //     }
+    //   }
+    // },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',

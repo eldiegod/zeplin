@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -12,12 +14,12 @@
 @tailwind preflight;
 
 /**
-  * This injects any component classes registered by plugins.
-  *
-  * If using `postcss-import`, use this import instead:
-  *
-  * @import "tailwindcss/components";
-  */
+* This injects any component classes registered by plugins.
+*
+* If using `postcss-import`, use this import instead:
+*
+* @import "tailwindcss/components";
+*/
 @tailwind components;
 
 /**
