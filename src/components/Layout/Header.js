@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
+import styled from 'styled-components'
+
+import * as Screen from '../Responsive'
 
 const linksData = [
   { to: '/unternehmen', text: 'UNTERNEHMEN' },
@@ -9,22 +13,80 @@ const linksData = [
   { to: '/kontakt', text: 'KONTAKT' },
   { to: '/leistungsportfolio#karriere', text: 'KARRIERE' },
 ]
-const Header = ({ logoImg }) => {
+
+const Header = ({
+  logoImg,
+  coverImg,
+  coverMobileImg,
+  logoWhiteImg,
+  menuIcon,
+}) => {
   return (
-    <div className="px-8 w-full flex items-center h-20 bg-white">
-      <div className="flex-none">
-        <Link to="/unternehmen">
-          <Img fixed={logoImg.childImageSharp.fixed} />
-        </Link>
-      </div>
-      <div className="flex flex-grow justify-end content-center">
-        {linksData.map((l, index) => (
-          <MyLink key={index} to={l.to}>
-            {l.text}
-          </MyLink>
-        ))}
-      </div>
-    </div>
+    <>
+      <Screen.Default>
+        <div>
+          <BgImage
+            className="px-8 py-6 bg-center flex flex-col justify-between  h-screen"
+            fluid={coverMobileImg.childImageSharp.fluid}
+          >
+            <div className="flex justify-between">
+              <div className="">
+                <Img fixed={menuIcon.childImageSharp.fixed} />
+              </div>
+              <div className="" style={{ width: '166px' }}>
+                <Img fluid={logoWhiteImg.childImageSharp.fluid} />
+              </div>
+            </div>
+            <div>
+              <div
+                className="futura font-bold text-white"
+                style={{ fontSize: '47px' }}
+              >
+                Cliente
+                <br /> Semper Fi
+              </div>
+            </div>
+          </BgImage>
+        </div>
+      </Screen.Default>
+      <Screen.SM>
+        {/* header */}
+        <div className="px-8 w-full flex items-center h-20 bg-white">
+          <div className="flex-none">
+            <Link to="/unternehmen">
+              <Img fixed={logoImg.childImageSharp.fixed} />
+            </Link>
+          </div>
+          <div className="flex flex-grow justify-end content-center">
+            {linksData.map((l, index) => (
+              <MyLink key={index} to={l.to}>
+                {l.text}
+              </MyLink>
+            ))}
+          </div>
+        </div>
+        {/* cover */}
+        <div>
+          <BgImage
+            className="pl-8 pb-6 bg-center flex flex-col justify-end"
+            fluid={coverImg.childImageSharp.fluid}
+            style={{
+              height: '608px',
+            }}
+          >
+            <div className="flex-none" style={{ width: '300px' }}>
+              <Img fluid={logoWhiteImg.childImageSharp.fluid} />
+            </div>
+            <div
+              className="futura font-bold text-white"
+              style={{ fontSize: '89px' }}
+            >
+              Cliente Semper Fi
+            </div>
+          </BgImage>
+        </div>
+      </Screen.SM>
+    </>
   )
 }
 
@@ -38,5 +100,12 @@ const MyLink = ({ children, to }) => {
     </Link>
   )
 }
+
+// hack to set bg position to center succesfully
+const BgImage = styled(BackgroundImage)`
+  :last-child ::after {
+    background-position: center;
+  }
+`
 
 export default Header

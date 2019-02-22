@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './Header'
 import Footer from './Footer'
-import Cover from './Cover'
 
 const Layout = ({ children, noCover = false, hardDriveCover = false }) => {
   return (
@@ -14,10 +13,14 @@ const Layout = ({ children, noCover = false, hardDriveCover = false }) => {
         const coverImg = hardDriveCover ? data.harddrive : data.cover
         return (
           <div>
-            <Header logoImg={data.logo} />
-            {!noCover && (
-              <Cover coverImg={coverImg} logoWhiteImg={data.logoWhite} />
-            )}
+            <Header
+              noCover={noCover}
+              logoImg={data.logo}
+              logoWhiteImg={data.logoWhite}
+              coverImg={coverImg}
+              coverMobileImg={data.coverMobile}
+              menuIcon={data.menuIcon}
+            />
             {children}
             <Footer />
           </div>
@@ -40,8 +43,8 @@ export const layoutQuery = graphql`
     }
     logoWhite: file(absolutePath: { regex: "/logo-white.png/" }) {
       childImageSharp {
-        fixed(width: 300, height: 38) {
-          ...GatsbyImageSharpFixed_tracedSVG
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -52,10 +55,24 @@ export const layoutQuery = graphql`
         }
       }
     }
+    coverMobile: file(absolutePath: { regex: "/coverMobile.jpg/" }) {
+      childImageSharp {
+        fluid(maxHeight: 900) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
     harddrive: file(absolutePath: { regex: "/harddrive.jpg/" }) {
       childImageSharp {
         fluid(maxHeight: 608) {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    menuIcon: file(absolutePath: { regex: "/menuIcon.png/" }) {
+      childImageSharp {
+        fixed(width: 26, height: 22) {
+          ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }
