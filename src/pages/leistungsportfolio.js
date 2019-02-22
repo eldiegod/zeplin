@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Img from 'gatsby-image'
+import * as Screen from '../components/Responsive'
 
 export default function Leistungsportfolio({ data }) {
-  const { thing1, thing2, thing3, thing4, rechteck } = data
+  const { thing1, thing2, thing3, thing4, rechteck, rechteckMobile } = data
   console.dir(data)
   return (
     <Layout>
@@ -14,10 +15,10 @@ export default function Leistungsportfolio({ data }) {
         title="Leistungsportfolio"
         keywords={[`leistungsportfolio`, `IT-Helpdesk`, `Karriere`, `SOFTWARE`]}
       />
-      <div className="futura text-grey text-center min-h-screen">
+      <div className="futura text-grey text-left sm:text-center min-h-screen">
         {/* uber uns */}
         <div>
-          <div className="mx-auto px-4 max-w-lg mt-32">
+          <div className="mx-auto px-8 max-w-lg mt-32">
             <div className="mt-1 font-light text-5xl">Leistungsportfolio</div>
             <div className="mt-8 text-lg leading-normal">
               Wir von TCI Trident Computer bieten Ihnen ein breites Spektrum an
@@ -71,10 +72,21 @@ export default function Leistungsportfolio({ data }) {
         </div>
         {/* big blue image */}
         <div className="mt-32">
-          <Img fluid={rechteck.childImageSharp.fluid} />
+          <Screen.Default>
+            <Img
+              className="h-64 sm:h-auto"
+              fluid={rechteckMobile.childImageSharp.fluid}
+            />
+          </Screen.Default>
+          <Screen.SM>
+            <Img
+              className="h-64 sm:h-auto"
+              fluid={rechteck.childImageSharp.fluid}
+            />
+          </Screen.SM>
         </div>
         {/* Geschichte*/}
-        <div className="mx-auto max-w-lg my-32">
+        <div className="mx-auto px-8 max-w-lg my-32">
           <div
             name="it-helpdesk"
             id="it-helpdesk"
@@ -107,7 +119,7 @@ export default function Leistungsportfolio({ data }) {
         <div className="my-16 mx-auto border border-blue w-64" />
         {/* Karriere */}
         <div>
-          <div className="mx-auto px-4 max-w-lg mt-16">
+          <div className="mx-auto px-8 max-w-lg mt-16">
             <div
               name="karriere"
               id="karriere"
@@ -129,7 +141,7 @@ export default function Leistungsportfolio({ data }) {
         <div className="mb-32">
           {[...new Array(4).fill(1)].map((_, index) => (
             <div>
-              <div className="mx-auto px-4 max-w-lg text-left mt-6 din text-lg text-4xl">
+              <div className="mx-auto px-8 max-w-lg text-left mt-6 din text-lg text-4xl">
                 <div className="tracking-wide">LOREM IPSUM</div>
                 <div className="mt-2 text-lg futura leading-normal text-justify">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -181,6 +193,13 @@ export const pageQuery = graphql`
     rechteck: file(absolutePath: { regex: "/rechteck.jpg/" }) {
       childImageSharp {
         fluid(maxHeight: 608) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    rechteckMobile: file(absolutePath: { regex: "/rechteckMobile.jpg/" }) {
+      childImageSharp {
+        fluid(maxHeight: 416) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

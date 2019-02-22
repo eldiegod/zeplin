@@ -2,9 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Trident Computer`,
     author: `Diego Cardenas`,
-    description: `desc`,
+    description: `unternehmen`,
     siteUrl: `www.google.com`,
-    social: {},
   },
   plugins: [
     {
@@ -58,13 +57,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
+        name: `Trident Computer`,
+        short_name: `TD`,
+        start_url: `/unternehmen`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#134395`,
         display: `minimal-ui`,
-        // icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-offline`,
