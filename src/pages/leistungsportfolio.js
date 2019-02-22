@@ -73,16 +73,10 @@ export default function Leistungsportfolio({ data }) {
         {/* big blue image */}
         <div className="mt-32">
           <Screen.Default>
-            <Img
-              className="h-64 sm:h-auto"
-              fluid={rechteckMobile.childImageSharp.fluid}
-            />
+            <Img className="" fluid={rechteckMobile.childImageSharp.fluid} />
           </Screen.Default>
           <Screen.SM>
-            <Img
-              className="h-64 sm:h-auto"
-              fluid={rechteck.childImageSharp.fluid}
-            />
+            <Img className="" fluid={rechteck.childImageSharp.fluid} />
           </Screen.SM>
         </div>
         {/* Geschichte*/}
@@ -115,46 +109,48 @@ export default function Leistungsportfolio({ data }) {
             </a>
           </div>
         </div>
-        {/* separator */}
-        <div className="my-16 mx-auto border border-blue w-64" />
-        {/* Karriere */}
-        <div>
-          <div className="mx-auto px-8 max-w-lg mt-16">
-            <div
-              name="karriere"
-              id="karriere"
-              className="mt-1 font-light text-5xl"
-            >
-              Karriere
-            </div>
-            <div className="mt-8 text-lg leading-normal">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes
+        <Screen.SM>
+          {/* separator */}
+          <div className="my-16 mx-auto border border-blue w-64" />
+          {/* Karriere */}
+          <div>
+            <div className="mx-auto px-8 max-w-lg mt-16">
+              <div
+                name="karriere"
+                id="karriere"
+                className="mt-1 font-light text-5xl"
+              >
+                Karriere
+              </div>
+              <div className="mt-8 text-lg leading-normal">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes
+              </div>
             </div>
           </div>
-        </div>
-        {/* separator */}
-        <div className="mx-auto max-w-lg">
-          <div className="mb-8 mt-16 mx-auto border border-blue w-full" />
-        </div>
-        <div className="mb-32">
-          {[...new Array(4).fill(1)].map((_, index) => (
-            <div>
-              <div className="mx-auto px-8 max-w-lg text-left mt-6 din text-lg text-4xl">
-                <div className="tracking-wide">LOREM IPSUM</div>
-                <div className="mt-2 text-lg futura leading-normal text-justify">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes.
+          {/* separator */}
+          <div className="mx-auto max-w-lg">
+            <div className="mb-8 mt-16 mx-auto border border-blue w-full" />
+          </div>
+          <div className="mb-32">
+            {[...new Array(4).fill(1)].map((_, index) => (
+              <div key={index}>
+                <div className="mx-auto px-8 max-w-lg text-left mt-6 din text-lg text-4xl">
+                  <div className="tracking-wide">LOREM IPSUM</div>
+                  <div className="mt-2 text-lg futura leading-normal text-justify">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes.
+                  </div>
+                </div>
+                <div className="mx-auto max-w-lg">
+                  <div className="my-8 mx-auto border border-blue w-full" />
                 </div>
               </div>
-              <div className="mx-auto max-w-lg">
-                <div className="my-8 mx-auto border border-blue w-full" />
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Screen.SM>
       </div>
     </Layout>
   )
