@@ -1,4 +1,4 @@
 export default function HomeRedirect() {
-  window.location.href = '/unternehmen'
+  if (window !== undefined) window.location.href = '/unternehmen'
   return null
 }
