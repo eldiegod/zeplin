@@ -35,7 +35,11 @@ export default function Impressum({ data }) {
         {/* separator */}
         <div className="my-32 mx-auto border border-blue w-64" />
         {/* Impressum */}
-        <div className="mx-auto px-4 max-w-lg mb-32">
+        <div
+          name="impressum"
+          id="impressum"
+          className="mx-auto px-4 max-w-lg mb-32"
+        >
           <div className="futura font-light text-5xl mb-8 text-left">
             Impressum
           </div>

@@ -75,7 +75,13 @@ export default function Leistungsportfolio({ data }) {
         </div>
         {/* Geschichte*/}
         <div className="mx-auto max-w-lg my-32">
-          <div className="mt-1 font-light text-5xl">IT-Helpdesk</div>
+          <div
+            name="it-helpdesk"
+            id="it-helpdesk"
+            className="mt-1 font-light text-5xl"
+          >
+            IT-Helpdesk
+          </div>
           <div className="mt-6 din tracking-wide text-lg text-xl">
             <div>SPAMFILTER </div>
             <a
@@ -102,7 +108,13 @@ export default function Leistungsportfolio({ data }) {
         {/* Karriere */}
         <div>
           <div className="mx-auto px-4 max-w-lg mt-16">
-            <div className="mt-1 font-light text-5xl">Karriere</div>
+            <div
+              name="karriere"
+              id="karriere"
+              className="mt-1 font-light text-5xl"
+            >
+              Karriere
+            </div>
             <div className="mt-8 text-lg leading-normal">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque

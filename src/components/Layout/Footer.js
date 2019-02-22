@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="flex content-center justify-center items-center pt-2 h-12 bg-blue text-white text-lg">
       <Link
         className="px-6 text-white tracking-wide din uppercase no-underline hover:underline"
-        to={'/datenschutz'}
+        to={'/datenschutz#impressum'}
       >
         IMPRESSUM
       </Link>
