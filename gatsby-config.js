@@ -15,8 +15,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/markdown`,
+        name: `markdown`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
+        gfm: true,
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -44,7 +55,6 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    // `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -57,14 +67,6 @@ module.exports = {
         // icon: `content/assets/gatsby-icon.png`,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
-    //   options: {
-    //     google: {
-    //       families: ['Droid Sans', 'Droid Serif']
-    //     }
-    //   }
-    // },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
