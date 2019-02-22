@@ -4,10 +4,10 @@ import Img from 'gatsby-image'
 
 const linksData = [
   { to: '/unternehmen', text: 'UNTERNEHMEN' },
-  { to: '/', text: 'LEISTUNGSPORTFOLIO' },
-  { to: '/', text: 'IT-HELPDESK' },
-  { to: '/', text: 'KONTAKT' },
-  { to: '/', text: 'KARRIERE' },
+  { to: '/leistungsportfolio', text: 'LEISTUNGSPORTFOLIO' },
+  { to: '/leistungsportfolio', text: 'IT-HELPDESK' },
+  { to: '/kontakt', text: 'KONTAKT' },
+  { to: '/leistungsportfolio', text: 'KARRIERE' },
 ]
 const Header = ({ logoImg }) => {
   return (
