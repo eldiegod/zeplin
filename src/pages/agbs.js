@@ -18,8 +18,10 @@ export default function AGBs({ data }) {
       <SEO title="AGBs" keywords={[`AGBS`]} />
       <div className="futura text-grey text-center mt-32">
         {/* Agbs */}
-        <div className="mx-auto px-4 max-w-lg mb-32">
-          <div className="futura font-light text-5xl mb-8 text-left">AGBs</div>
+        <div className="mx-auto px-8 max-w-lg mb-32">
+          <div className="futura font-light text-4xl sm:text-5xl mb-8 text-left">
+            AGBs
+          </div>
           <Container
             className="text-lg leading-normal text-justify"
             dangerouslySetInnerHTML={{ __html: data.agbs.edges[0].node.html }}

@@ -21,8 +21,8 @@ export default function Impressum({ data }) {
       />
       <div className="futura text-grey text-center mt-32">
         {/* Datenschutzerklärung */}
-        <div className="mx-auto px-4 max-w-lg ">
-          <div className="futura font-light text-5xl mb-8 text-left">
+        <div className="mx-auto px-8 max-w-lg ">
+          <div className="futura font-light text-4xl sm:text-5xl mb-8 text-left">
             Datenschutzerklärung
           </div>
           <Container
@@ -38,9 +38,9 @@ export default function Impressum({ data }) {
         <div
           name="impressum"
           id="impressum"
-          className="mx-auto px-4 max-w-lg mb-32"
+          className="mx-auto px-8 max-w-lg mb-32"
         >
-          <div className="futura font-light text-5xl mb-8 text-left">
+          <div className="futura font-light text-4xl sm:text-5xl mb-8 text-left">
             Impressum
           </div>
           <Container
