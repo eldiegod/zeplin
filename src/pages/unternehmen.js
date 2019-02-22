@@ -14,15 +14,15 @@ export default function Unternehmen({ data }) {
         title="Unternehmen"
         keywords={[`unternehmen`, `Über uns`, `Ansprechpartner`, `Geschichte`]}
       />
-      <div className="futura text-grey text-center min-h-screen">
+      <div className="futura text-grey text-left sm:text-center min-h-screen">
         {/* uber uns */}
         <div>
-          <div className="mx-auto max-w-lg">
+          <div className="mx-auto max-w-lg px-8">
             <div className="din tracking-wide text-lg mt-32 text-2xl">
               DAS UNTERNEHMEN
             </div>
             <div className="mt-1 font-light text-5xl">Über uns</div>
-            <div className="mt-8 text-lg leading-normal">
+            <div className="mt-8 text-lg leading-normal text-justify">
               Mit unserem Unternehmen mit Hauptsitz in Viernheim liefern wir
               Ihnen individuelle IT Beratung und Betreuung sowie eine
               kundenspezifische Konzipierung von IT Lösungen. Die TCI Trident
@@ -37,10 +37,11 @@ export default function Unternehmen({ data }) {
             </div>
           </div>
         </div>
-        <div className="mt-32 mx-auto border border-blue w-64" />
+        {/* separator */}
+        <div className="mt-16 sm:mt-32 ml-8 sm:mx-auto border border-blue w-64" />
         {/* das team */}
-        <div className="mx-auto max-w-xl">
-          <div className="din tracking-wide text-lg mt-32 text-2xl">
+        <div className="mx-auto px-8 max-w-xl">
+          <div className="din tracking-wide text-lg mt-16 sm:mt-32 text-2xl">
             DAS TEAM
           </div>
           <div className="mt-1 font-light text-5xl">Ansprechpartner</div>
@@ -75,12 +76,12 @@ export default function Unternehmen({ data }) {
           </div>
         </div>
         {/* vision */}
-        <div className="bg-blue my-32 py-32 text-white">
+        <div className="px-8 bg-blue my-32 py-32 text-white">
           <div className="mx-auto max-w-lg">
             <div className="font-bold" style={{ fontSize: '90px' }}>
               Vision
             </div>
-            <div className="mt-8 text-lg leading-normal">
+            <div className="mt-8 text-lg leading-normal text-justify">
               Cliente Semper Fidelis, dem Kunden immer treu ergeben. So lautet
               unser Motto, und das ist auch unsere Herangehensweise an Ihr
               IT-Problem. Uns ist vor allem die zukunftsorientierte Konzeption
@@ -97,12 +98,12 @@ export default function Unternehmen({ data }) {
         </div>
         {/* Geschichte*/}
         <div>
-          <div className="mx-auto max-w-lg mb-32">
+          <div className="px-8 mx-auto max-w-lg mb-32">
             <div className="din tracking-wide text-lg mt-32 text-2xl">
               DAS UNTERNEHMEN
             </div>
             <div className="mt-1 font-light text-5xl">Geschichte</div>
-            <div className="mt-8 text-lg leading-normal">
+            <div className="mt-8 text-lg leading-normal text-justify">
               Die TCI Trident Computer GmbH wurde im Jahr 1989 gegründet und
               expandierte bereits im selben Jahr und den beiden Folgejahren nach
               China (TCI Taiwan, 1989), Norwegen (MIPS Norwegen, 1990) und
