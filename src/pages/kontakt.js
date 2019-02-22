@@ -14,7 +14,7 @@ export default function Kontakt({ data }) {
         title="Kontakt"
         keywords={[`leistungsportfolio`, `IT-Helpdesk`, `Karriere`, `SOFTWARE`]}
       />
-      <div className="futura text-grey text-center ">
+      <div className="futura text-grey text-left sm:text-center ">
         {/* map */}
         <div>
           <iframe
@@ -27,15 +27,17 @@ export default function Kontakt({ data }) {
           />
         </div>
         {/* logo */}
-        <div className="mt-32">
-          <Img fixed={logo.childImageSharp.fixed} />
+        <div className="px-8 mt-32">
+          <Img fluid={logo.childImageSharp.fluid} />
         </div>
         {/* separator */}
-        <div className="my-16 mx-auto border border-blue w-64" />
+        <div className="mx-8 my-8 sm:my-16 sm:mx-auto border border-blue w-64" />
         {/* Kontakt */}
-        <div className="mx-auto px-4 max-w-lg mb-32">
+        <div className="px-8 mx-auto max-w-lg mb-32">
           <div className="text-lg leading-normal">
-            Neuer Weg 5, D-68519 Viernheim
+            Neuer Weg 5,
+            <br />
+            D-68519 Viernheim
             <br /> <br />
             Telefon: +49 6204-966240
             <br />
@@ -53,8 +55,8 @@ export const pageQuery = graphql`
   query KontaktfolioQuery {
     logo: file(absolutePath: { regex: "/logo.png/" }) {
       childImageSharp {
-        fixed(width: 492, height: 63) {
-          ...GatsbyImageSharpFixed_tracedSVG
+        fluid(maxWidth: 492) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
