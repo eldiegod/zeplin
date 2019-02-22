@@ -5,7 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Cover from './Cover'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, noCover }) => {
   return (
     <StaticQuery
       query={layoutQuery}
@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
         return (
           <div>
             <Header logoImg={data.logo} />
-            <Cover coverImg={data.cover} logoWhiteImg={data.logoWhite} />
+            {!noCover && (
+              <Cover coverImg={data.cover} logoWhiteImg={data.logoWhite} />
+            )}
             {children}
             <Footer />
           </div>

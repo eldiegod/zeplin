@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
 
-export default function BlogIndex({ data }) {
+export default function Leistungsportfolio({ data }) {
   const { thing1, thing2, thing3, thing4, rechteck } = data
   console.dir(data)
   return (
