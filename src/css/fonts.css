@@ -2,19 +2,19 @@
   font-family: 'Futura LT';
   font-style: normal;
   font-weight: 500;
-  src: local('Futura LT Medium'), url('/FuturaLT.otf') format('otf');
+  src: url('/FuturaLT.otf') format('otf');
 }
 @font-face {
   font-family: 'Futura LT';
   font-style: normal;
   font-weight: 300; /* or light */
-  src: local('Futura LT Light'), url('/FuturaLT-Light.otf') format('otf');
+  src: url('/FuturaLT-Light.otf') format('otf');
 }
 @font-face {
   font-family: 'Futura LT';
   font-style: normal;
   font-weight: bold; /* or 700 */
-  src: local('Futura LT Bold'), url('/FuturaLT-Bold.otf') format('otf');
+  src: url('/FuturaLT-Bold.otf') format('otf');
 }
 .futura {
   font-family: 'Futura LT';
@@ -24,7 +24,7 @@
   font-family: 'Din Condensed';
   font-style: normal;
   font-weight: bold;
-  src: local('DIN Condensed Bold'), url('/DIN_Condensed_Bold.ttf') format('ttf');
+  src: url('/DIN_Condensed_Bold.ttf') format('ttf');
 }
 .din {
   font-family: 'Din Condensed';

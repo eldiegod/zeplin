@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `
 export default function Impressum({ data }) {
-  console.dir(data)
+  // console.dir(data)
   return (
     <Layout hardDriveCover>
       <SEO

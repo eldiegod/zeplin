@@ -73,7 +73,7 @@ export default function Unternehmen({ data }) {
                 const isLastOrFirst = index === 0 || index + 1 === array.length
                 const mx = isLastOrFirst ? '' : 'mx-16'
                 return (
-                  <div className={`inline-block ${mx}`}>
+                  <div key={index} className={`inline-block ${mx}`}>
                     <Img fixed={content.img.childImageSharp.fixed} />
                     <div className="mt-8 din tracking-wide text-lg text-2xl">
                       {content.title}

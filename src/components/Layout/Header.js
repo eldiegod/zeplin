@@ -107,7 +107,7 @@ const Header = ({
         {/* cover */}
         {!noCover && (
           <div>
-            <BgImage
+            <BackgroundImage
               className="pl-8 pb-6 bg-center flex flex-col justify-end"
               fluid={coverImg.childImageSharp.fluid}
               style={{
@@ -123,7 +123,7 @@ const Header = ({
               >
                 Cliente Semper Fi
               </div>
-            </BgImage>
+            </BackgroundImage>
           </div>
         )}
       </Responsive>

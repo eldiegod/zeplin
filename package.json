@@ -1,12 +1,9 @@
 {
-  "name": "alitas-yoga",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "name": "Trident Computer",
+  "private": false,
+  "description": "Static site built with Gatsby",
+  "version": "1.0.0",
+  "author": "Diego Cardenas <cardenasrdiego@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
@@ -44,16 +41,7 @@
     "prettier": "^1.14.2",
     "tailwindcss": "^0.7.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
     "dev": "gatsby develop",
     "develop": "gatsby develop",
