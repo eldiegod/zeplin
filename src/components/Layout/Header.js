@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import Responsive from 'react-responsive'
+
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
 
-import * as Screen from '../Responsive'
 import Footer from './Footer'
 
 const linksData = [
@@ -28,7 +29,7 @@ const Header = ({
   return (
     <>
       {/* mobile menu */}
-      <Screen.Default>
+      <Responsive maxWidth={895}>
         <div className="">
           {mobileMenuIsActive ? (
             <div className="px-8 pt-6 pb-1 flex flex-col justify-between h-screen bg-blue ">
@@ -46,7 +47,7 @@ const Header = ({
               <div className="mt-16 flex flex-grow flex-col content-center">
                 {linksData.map((l, index) => (
                   <div onClick={() => setMobileMenuActive(false)} key={index}>
-                    <MyLink to={l.to}>{l.text}</MyLink>
+                    <MyLinkMobile to={l.to}>{l.text}</MyLinkMobile>
                     {/* separator */}
                     {linksData.length !== index + 1 && (
                       <div className="my-4 border-t border-white w-16" />
@@ -85,8 +86,9 @@ const Header = ({
             </BgImage>
           )}
         </div>
-      </Screen.Default>
-      <Screen.SM>
+      </Responsive>
+      {/* desktop stuff */}
+      <Responsive minWidth={896}>
         {/* header */}
         <div className="px-8 w-full flex items-center h-20 bg-white">
           <div className="flex-none">
@@ -96,9 +98,9 @@ const Header = ({
           </div>
           <div className="flex flex-grow justify-end content-center">
             {linksData.map((l, index) => (
-              <MyLink key={index} to={l.to}>
+              <MyLinkDesktop key={index} to={l.to}>
                 {l.text}
-              </MyLink>
+              </MyLinkDesktop>
             ))}
           </div>
         </div>
@@ -124,31 +126,30 @@ const Header = ({
             </BgImage>
           </div>
         )}
-      </Screen.SM>
+      </Responsive>
     </>
   )
 }
 
-const MyLink = ({ children, to }) => {
+const MyLinkMobile = ({ children, to }) => {
   return (
-    <>
-      <Screen.Default>
-        <Link
-          className="tracking-wide din uppercase no-underline text-white text-3xl"
-          to={to}
-        >
-          {children}
-        </Link>
-      </Screen.Default>
-      <Screen.SM>
-        <Link
-          className="pt-2 tracking-wide din uppercase no-underline hover:underline px-4 text-grey  text-lg"
-          to={to}
-        >
-          {children}
-        </Link>
-      </Screen.SM>
-    </>
+    <Link
+      className="tracking-wide din uppercase no-underline text-white text-3xl"
+      to={to}
+    >
+      {children}
+    </Link>
+  )
+}
+
+const MyLinkDesktop = ({ children, to }) => {
+  return (
+    <Link
+      className="pt-2 tracking-wide din uppercase no-underline hover:underline px-4 text-grey  text-lg"
+      to={to}
+    >
+      {children}
+    </Link>
   )
 }
 
