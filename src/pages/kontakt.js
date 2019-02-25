@@ -22,13 +22,16 @@ export default function Kontakt({ data }) {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.7605694421536!2d8.586389315781075!3d49.54567087936079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797d0057836c683%3A0xfc06286c02b6cd81!2sNeuer+Weg+5%2C+68519+Viernheim%2C+Germany!5e0!3m2!1sen!2ses!4v1550839137686"
             width="100%"
             height="608"
-            frameborder="0"
+            frameBorder="0"
             allowfullscreen
           />
         </div>
         {/* logo */}
-        <div className="px-8 mt-32">
-          <Img fluid={logo.childImageSharp.fluid} />
+        <div className="sm:mx-auto px-8 mt-32 max-w-sm">
+          <Img
+            fluid={logo.childImageSharp.fluid}
+            styl={{ maxWidth: '492px' }}
+          />
         </div>
         {/* separator */}
         <div className="mx-8 my-8 sm:my-16 sm:mx-auto border border-blue w-64" />

@@ -20,6 +20,7 @@ const Layout = ({ children, noCover = false, hardDriveCover = false }) => {
               coverImg={coverImg}
               coverMobileImg={data.coverMobile}
               menuIcon={data.menuIcon}
+              closeIcon={data.closeIcon}
             />
             {children}
             <Footer />
@@ -72,6 +73,13 @@ export const layoutQuery = graphql`
     menuIcon: file(absolutePath: { regex: "/menuIcon.png/" }) {
       childImageSharp {
         fixed(width: 26, height: 22) {
+          ...GatsbyImageSharpFixed_tracedSVG
+        }
+      }
+    }
+    closeIcon: file(absolutePath: { regex: "/closeIcon.png/" }) {
+      childImageSharp {
+        fixed(width: 26, height: 26) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }
