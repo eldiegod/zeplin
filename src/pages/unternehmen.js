@@ -1,12 +1,32 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Responsive from 'react-responsive'
 
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Img from 'gatsby-image'
+import Slider from '../components/Slider'
+import * as Screen from '../components/Responsive'
 
 export default function Unternehmen({ data }) {
   const { guy1, guy2, guy3 } = data
+  const sliderContent = [
+    {
+      img: guy1,
+      title: 'ANDREAS SCHNEIDER',
+      subtitle: 'Projektleitung & Projektberatung',
+    },
+    {
+      img: guy2,
+      title: 'STEFFEN SCHNEIDER',
+      subtitle: 'Datev & Projektleitung',
+    },
+    {
+      img: guy3,
+      title: 'DENNIS VORONTSOV',
+      subtitle: 'Verwaltung, Vertrieb & Einkauf',
+    },
+  ]
   console.dir(data)
   return (
     <Layout>
@@ -45,36 +65,57 @@ export default function Unternehmen({ data }) {
             DAS TEAM
           </div>
           <div className="mt-1 font-light text-5xl">Ansprechpartner</div>
-          <div className="mx-auto mt-16 text-lg">
-            <div className="inline-block">
-              <Img fixed={guy1.childImageSharp.fixed} />
-              <div className="mt-8 din tracking-wide text-lg text-2xl">
-                ANDREAS SCHNEIDER
+          <Responsive maxWidth={935}>
+            <Slider content={sliderContent} />
+          </Responsive>
+          <Responsive minWidth={936}>
+            <div className="mx-auto mt-16 text-lg text-center">
+              {sliderContent.map((content, index, array) => {
+                const isLastOrFirst = index === 0 || index + 1 === array.length
+                const mx = isLastOrFirst ? '' : 'mx-16'
+                return (
+                  <div className={`inline-block ${mx}`}>
+                    <Img fixed={content.img.childImageSharp.fixed} />
+                    <div className="mt-8 din tracking-wide text-lg text-2xl">
+                      {content.title}
+                    </div>
+                    <div className="text-normal leading-normal">
+                      {content.subtitle}
+                    </div>
+                  </div>
+                )
+              })}
+              {/* <div className="inline-block">
+                <Img fixed={guy1.childImageSharp.fixed} />
+                <div className="mt-8 din tracking-wide text-lg text-2xl">
+                  ANDREAS SCHNEIDER
+                </div>
+                <div className="text-normal leading-normal">
+                  Projektleitung & Projektberatung
+                </div>
               </div>
-              <div className="text-normal leading-normal">
-                Projektleitung & Projektberatung
+              <div className="inline-block sm:ml-16 md:mx-16">
+                <Img className="" fixed={guy2.childImageSharp.fixed} />
+                <div className="mt-8 din tracking-wide text-lg text-2xl">
+                  ANDREAS SCHNEIDER
+                </div>
+                <div className="text-normal leading-normal">
+                  Projektleitung & Projektberatung
+                </div>
               </div>
+              <div className="inline-block sm:mt-8 md:mt-0">
+                <Img fixed={guy3.childImageSharp.fixed} />
+                <div className="mt-8 din tracking-wide text-lg text-2xl">
+                  ANDREAS SCHNEIDER
+                </div>
+                <div className="text-normal leading-normal">
+                  Projektleitung & Projektberatung
+                </div>
+              </div> */}
             </div>
-            <div className="inline-block">
-              <Img className="mx-16" fixed={guy2.childImageSharp.fixed} />
-              <div className="mt-8 din tracking-wide text-lg text-2xl">
-                ANDREAS SCHNEIDER
-              </div>
-              <div className="text-normal leading-normal">
-                Projektleitung & Projektberatung
-              </div>
-            </div>
-            <div className="inline-block">
-              <Img fixed={guy3.childImageSharp.fixed} />
-              <div className="mt-8 din tracking-wide text-lg text-2xl">
-                ANDREAS SCHNEIDER
-              </div>
-              <div className="text-normal leading-normal">
-                Projektleitung & Projektberatung
-              </div>
-            </div>
-          </div>
+          </Responsive>
         </div>
+
         {/* vision */}
         <div className="px-8 bg-blue my-32 py-32 text-white">
           <div className="mx-auto max-w-lg">

@@ -31,7 +31,7 @@ const Header = ({
       <Screen.Default>
         <div className="">
           {mobileMenuIsActive ? (
-            <div className="px-8 pt-6 pb-1 flex flex-col justify-between h-screen bg-blue overflow-hidden">
+            <div className="px-8 pt-6 pb-1 flex flex-col justify-between h-screen bg-blue ">
               <div className="flex justify-between">
                 <div
                   className="cursor-pointer"
