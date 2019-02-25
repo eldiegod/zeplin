@@ -1,14 +1,38 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Responsive from 'react-responsive'
 
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as Screen from '../components/Responsive'
+import Slider from '../components/Slider'
 
 export default function Leistungsportfolio({ data }) {
   const { thing1, thing2, thing3, thing4, rechteck, rechteckMobile } = data
-  console.dir(data)
+  const sliderContent = [
+    {
+      img: thing1,
+      title: 'BERATUNG & VERTRÄGE',
+      subtitle: '',
+    },
+    {
+      img: thing2,
+      title: 'SERVICE',
+      subtitle: '',
+    },
+    {
+      img: thing3,
+      title: 'SOFTWARE',
+      subtitle: '',
+    },
+    {
+      img: thing4,
+      title: 'HARDWARE',
+      subtitle: '',
+    },
+  ]
+  // console.dir(data)
   return (
     <Layout>
       <SEO
@@ -34,41 +58,46 @@ export default function Leistungsportfolio({ data }) {
           </div>
         </div>
         {/* circles */}
-        <div className="mx-auto max-w-full mt-32">
-          <div className="lg:px-16 xl:px-32 mx-auto mt-16 text-lg flex justify-center lg:justify-between flex-wrap">
-            <div className="inline-block mx-4">
-              <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
-                <Img fixed={thing1.childImageSharp.fixed} />
+        <div className="mx-auto mt-32">
+          <Responsive maxWidth={935}>
+            <Slider withBackground content={sliderContent} />
+          </Responsive>
+          <Responsive minWidth={936}>
+            <div className="xl:px-32 mx-auto text-lg flex justify-around flex-no-wrap">
+              <div className="inline-block">
+                <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
+                  <Img fixed={thing1.childImageSharp.fixed} />
+                </div>
+                <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
+                  BERATUNG & VERTRÄGE
+                </div>
               </div>
-              <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
-                BERATUNG & VERTRÄGE
+              <div className="inline-block">
+                <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
+                  <Img fixed={thing2.childImageSharp.fixed} />
+                </div>
+                <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
+                  SERVICE
+                </div>
+              </div>
+              <div className="inline-block">
+                <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
+                  <Img fixed={thing3.childImageSharp.fixed} />
+                </div>
+                <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
+                  SOFTWARE{' '}
+                </div>
+              </div>
+              <div className="inline-block">
+                <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
+                  <Img fixed={thing4.childImageSharp.fixed} />
+                </div>
+                <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
+                  HARDWARE
+                </div>
               </div>
             </div>
-            <div className="inline-block mx-4">
-              <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
-                <Img fixed={thing2.childImageSharp.fixed} />
-              </div>
-              <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
-                SERVICE
-              </div>
-            </div>
-            <div className="mt-16 md:mt-0 inline-block mx-4">
-              <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
-                <Img fixed={thing3.childImageSharp.fixed} />
-              </div>
-              <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
-                SOFTWARE{' '}
-              </div>
-            </div>
-            <div className="mt-16 md:mt-0 inline-block mx-4">
-              <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
-                <Img fixed={thing4.childImageSharp.fixed} />
-              </div>
-              <div className="mt-4 sm:mt-8 din tracking-wide text-lg text-2xl">
-                HARDWARE
-              </div>
-            </div>
-          </div>
+          </Responsive>
         </div>
         {/* big blue image */}
         <div className="mt-32">

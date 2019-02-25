@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-const Slider = ({ content }) => {
+const Slider = ({ content, withBackground = false }) => {
   const [index, setIndex] = useState(0)
   const increment = () => {
     if (index + 1 >= content.length) return
@@ -12,18 +12,25 @@ const Slider = ({ content }) => {
     if (index <= 0) return
     setIndex(index - 1)
   }
+  console.log(content)
   return (
     <StaticQuery
       query={sliderQuery}
       render={data => {
-        console.log(data)
+        // console.log(data)
         return (
           <div className="mt-16 text-center">
             <div className="flex items-center justify-between sm:justify-around">
               <button onClick={decrement}>
                 <Img fixed={data.leftArrow.childImageSharp.fixed} />
               </button>
-              <Img fixed={content[index].img.childImageSharp.fixed} />
+              {withBackground ? (
+                <div className="bg-blue rounded-full w-48 h-48 flex items-center justify-center">
+                  <Img fixed={content[index].img.childImageSharp.fixed} />
+                </div>
+              ) : (
+                <Img fixed={content[index].img.childImageSharp.fixed} />
+              )}
               <button onClick={increment}>
                 <Img fixed={data.rightArrow.childImageSharp.fixed} />
               </button>

@@ -6,7 +6,6 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import Slider from '../components/Slider'
-import * as Screen from '../components/Responsive'
 
 export default function Unternehmen({ data }) {
   const { guy1, guy2, guy3 } = data
@@ -85,33 +84,6 @@ export default function Unternehmen({ data }) {
                   </div>
                 )
               })}
-              {/* <div className="inline-block">
-                <Img fixed={guy1.childImageSharp.fixed} />
-                <div className="mt-8 din tracking-wide text-lg text-2xl">
-                  ANDREAS SCHNEIDER
-                </div>
-                <div className="text-normal leading-normal">
-                  Projektleitung & Projektberatung
-                </div>
-              </div>
-              <div className="inline-block sm:ml-16 md:mx-16">
-                <Img className="" fixed={guy2.childImageSharp.fixed} />
-                <div className="mt-8 din tracking-wide text-lg text-2xl">
-                  ANDREAS SCHNEIDER
-                </div>
-                <div className="text-normal leading-normal">
-                  Projektleitung & Projektberatung
-                </div>
-              </div>
-              <div className="inline-block sm:mt-8 md:mt-0">
-                <Img fixed={guy3.childImageSharp.fixed} />
-                <div className="mt-8 din tracking-wide text-lg text-2xl">
-                  ANDREAS SCHNEIDER
-                </div>
-                <div className="text-normal leading-normal">
-                  Projektleitung & Projektberatung
-                </div>
-              </div> */}
             </div>
           </Responsive>
         </div>
