@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `
 export default function AGBs({ data }) {
-  console.dir(data)
+  // console.dir(data)
   return (
     <Layout hardDriveCover>
       <SEO title="AGBs" keywords={[`AGBS`]} />

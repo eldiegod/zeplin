@@ -26,7 +26,7 @@ export default function Unternehmen({ data }) {
       subtitle: 'Verwaltung, Vertrieb & Einkauf',
     },
   ]
-  console.dir(data)
+  // console.dir(data)
   return (
     <Layout>
       <SEO

@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 
 export default function Kontakt({ data }) {
   const { logo } = data
-  console.dir(data)
+  // console.dir(data)
   return (
     <Layout noCover>
       <SEO

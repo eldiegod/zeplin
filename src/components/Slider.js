@@ -12,7 +12,7 @@ const Slider = ({ content, withBackground = false }) => {
     if (index <= 0) return
     setIndex(index - 1)
   }
-  console.log(content)
+  // console.log(content)
   return (
     <StaticQuery
       query={sliderQuery}
