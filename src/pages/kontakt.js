@@ -23,7 +23,7 @@ export default function Kontakt({ data }) {
             width="100%"
             height="608"
             frameBorder="0"
-            allowfullscreen
+            allowFullScreen
           />
         </div>
         {/* logo */}
