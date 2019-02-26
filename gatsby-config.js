@@ -66,7 +66,6 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
     `gatsby-plugin-postcss`,
