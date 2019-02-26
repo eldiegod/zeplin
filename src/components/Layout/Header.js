@@ -27,7 +27,7 @@ const Header = ({
 }) => {
   const [mobileMenuIsActive, setMobileMenuActive] = useState(false)
   return (
-    <>
+    <div>
       {/* mobile menu */}
       <Responsive maxWidth={895}>
         <div className="">
@@ -127,7 +127,7 @@ const Header = ({
           </div>
         )}
       </Responsive>
-    </>
+    </div>
   )
 }
 
